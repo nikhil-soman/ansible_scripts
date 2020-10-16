@@ -1,0 +1,7 @@
+---
+- name: 'Configuring NTP on the remote systems'
+  become: yes
+  hosts: ntp
+  ignore_errors: true
+  roles:
+    - roles/ntp

@@ -1,0 +1,20 @@
+---
+# For configuring NTP service
+
+ntp_server:
+  - '0.coreos.pool.ntp.org'
+  - '1.coreos.pool.ntp.org'
+  - '2.coreos.pool.ntp.org'
+  - '3.coreos.pool.ntp.org'
+
+ntp_service:
+      Debian: ntp
+      RedHat: ntpd
+
+# For adding users
+
+users:
+  - shan
+  - mat
+  - henry
+  - nick

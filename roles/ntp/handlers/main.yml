@@ -1,0 +1,6 @@
+---
+- name: "Restart NTP"
+  service:
+    name: "{{ ntp_service[ansible_os_family] }}"
+    state: restarted
+    enabled: yes

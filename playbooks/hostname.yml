@@ -1,0 +1,6 @@
+---
+- name: "Set hostname"
+  become: yes
+  hosts: ntp
+  roles:
+    - roles/hostname

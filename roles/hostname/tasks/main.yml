@@ -1,0 +1,9 @@
+---
+- name: 'Change hostname'
+  hostname:
+    name: "{{ host_name }}"
+- name: 'Add hostname to hosts file'
+  lineinfile:
+    path: /etc/hosts
+    regex: '^127\.0\.0\.1[ \t]+localhost.*'
+    line: '127.0.0.1 localhost {{ host_name }}'

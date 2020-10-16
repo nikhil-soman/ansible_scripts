@@ -1,0 +1,7 @@
+---
+- name: 'Install/Uninstall pacakges on Debian/RedHat systems'
+  become: yes
+  hosts: ntp
+  ignore_errors: true
+  roles:
+    - roles/package

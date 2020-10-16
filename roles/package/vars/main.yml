@@ -1,0 +1,25 @@
+---
+install_package:
+  Debian:
+    - apache2
+    - php
+    - libapache2-mod-php
+    - mysql-server
+  RedHat:
+    - httpd
+    - mariadb-server
+    - php
+    - php-mysql
+uninstall_package:
+  Debian:
+    - mysql-server
+  RedHat:
+    - php
+    - php-mysql
+restart_packages:
+  Debian:
+    - apache2
+    - mysql
+  RedHat:
+    - httpd
+    - mariadb

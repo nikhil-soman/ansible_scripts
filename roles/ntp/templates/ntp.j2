@@ -1,0 +1,11 @@
+# NTP Configuration file - managed using Ansible.
+# Please don't edit manually.
+
+driftfile /var/lib/ntp/ntp.drift
+restrict default nomodify nopeer noquery limited kod
+restrict 127.0.0.1
+restrict [::1]
+
+{% for server in ntp_server %}
+server {{ server }}
+{% endfor %}

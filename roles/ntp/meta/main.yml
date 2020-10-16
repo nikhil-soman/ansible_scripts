@@ -1,0 +1,4 @@
+galaxy_info:
+  author: Nikhil Soman
+  description: This role will install, configure NTP service on the client machines and set time to UTC timezone.
+  company: QBurst

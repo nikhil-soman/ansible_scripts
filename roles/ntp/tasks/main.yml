@@ -1,0 +1,31 @@
+---
+- name: "Removing chrony"
+  package:
+    name: chrony
+    state: absent
+
+- name: 'Updating the pacakges on Debian servers'
+  when: ansible_os_family == 'Debian'
+  apt:
+    update_cache: yes
+    force_apt_get: yes
+    cache_valid_time: 3600
+
+- name: "Installing NTP"
+  package:
+    name: ntp
+    state: present
+
+- name: "Deploying NTP conf"
+  template:
+    src: ntp.j2
+    dest: /etc/ntp.conf
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+  notify: Restart NTP
+
+- name: "Set UTC Timezone"
+  timezone:
+    name: Etc/UTC

@@ -1,0 +1,6 @@
+---
+- name: 'create user with SSH keys'
+  become: yes
+  hosts: ntp
+  roles:
+    - roles/useradd

@@ -1,0 +1,15 @@
+---
+- name: 'Installing pacakges'
+  package:
+    name: "{{ install_package[ansible_os_family] }}"
+    state: present
+- name: "Uninstalling pacakges"
+  package:
+    name: "{{ uninstall_package[ansible_os_family] }}"
+    state: absent
+- name: "Restarting services"
+  service:
+    name: "{{ item }}"
+    state: restarted
+    enabled: true
+  with_items: "{{ restart_packages[ansible_os_family] }}"
